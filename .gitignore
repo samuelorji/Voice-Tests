@@ -1,0 +1,36 @@
+ *.class
+.idea
+target/
+
+# Temp files
+*~
+
+# Compile results
+target/**
+project/project/**
+project/target/**
+*pyc
+
+core/target/**
+sip/target/**
+switch/target/**
+handler/target/**
+outbound/target/**
+web/target/**
+
+data/scripts/test/atlas_mysql_schema.sql
+data/scripts/test/atlas_mysql_data.sql
+data/scripts/test/atlas_mysql_patch.sql
+data/scripts/test/atlas_cassy_schema.cql
+data/scripts/test/atlas_cassy_patch.cql
+data/scripts/test/atlas_redis_data.txt
+
+# ensime related
+.ensime
+.ensime_cache
+
+# VS Code Related
+.vscode
+
+
+
