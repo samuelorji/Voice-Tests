@@ -13,7 +13,7 @@ import akka.stream.ActorMaterializer
 
 import scala.util.{Failure, Success}
 
-object Record extends App {
+object RecordFormat extends App {
 
   //this uses the Record Action
 
@@ -82,17 +82,16 @@ object Record extends App {
         }
       }
     }
-  } ~
+  } ~ path("record") {
     post {
       formFieldMap { fields =>
         val recordingUrl = getRecordingUrl(fields)
         if (!recordingUrl.isEmpty) {
           downloadRecording(recordingUrl)
-        }else{
-          println("Recording Url not found!!!!!!!!!!!!!!!!!")
         }
         complete(endCall)
       }
+    }
   }
   Http().bindAndHandle(routes,host,port).onComplete{
     case Success(value) => println(s"Server successfully started on ${value.localAddress}")

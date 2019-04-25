@@ -9,7 +9,7 @@ import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
 
-import scala.util.{Failure, Success}
+import scala.util.{ Failure, Success }
 
 object GetDigitFormat extends App{
 
