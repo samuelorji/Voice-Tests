@@ -29,7 +29,7 @@ object GetDigitFormat extends App{
   def sendGetDigitResponse =
     s"""
        |<Response>
-       |    <GetDigits timeout="30" numDigits="11" finishOnKey="#" callbackUrl="https://orji.ngrok.io/getDigits">
+       |    <GetDigits timeout="30" numDigits="11" finishOnKey="#" callbackUrl="https://loquor.serveo.net/getDigits">
        |        <Say>Please Type in your phone number and the Hash sign when done  </Say>
        |    </GetDigits>
        |</Response>
@@ -46,10 +46,8 @@ object GetDigitFormat extends App{
       post{
         formFieldMap { fields =>
          val digits = getDigitsFromCall(fields)
-          if(!digits.isEmpty){
+          if(!digits.isEmpty) {
             println(digits)
-          }else{
-            println("No Dtmf received")
           }
           complete(StatusCodes.OK)
         }
