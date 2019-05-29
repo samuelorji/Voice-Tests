@@ -11,7 +11,7 @@ import akka.stream.ActorMaterializer
 
 import scala.util.{ Failure, Success }
 
-object GetDigitFormat extends App{
+object GetDigitFormat extends App {
 
   val host = "localhost"
   val port = 9090
@@ -29,7 +29,7 @@ object GetDigitFormat extends App{
   def sendGetDigitResponse =
     s"""
        |<Response>
-       |    <GetDigits timeout="30" numDigits="11" finishOnKey="#" callbackUrl="https://loquor.serveo.net/getDigits">
+       |    <GetDigits timeout="30" numDigits="11" finishOnKey="#" callbackUrl="https://senex.serveo.net/getDigits">
        |        <Say>Please Type in your phone number and the Hash sign when done  </Say>
        |    </GetDigits>
        |</Response>

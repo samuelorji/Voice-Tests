@@ -31,11 +31,13 @@ object DialFormat extends App {
       case x if x.toInt == 0  => false
     }
 
-  def sendDialResponse =
+  def sendDialResponse(sequential : Boolean,nums : String*) =
     s"""
        |<Response>
+       |<Say voice="man">Please wait while we connect you to client relations</Say>
        |    <Dial
-       |        phoneNumbers="+2348029888168"
+       |        phoneNumbers="${nums.mkString(",")}"
+       |        sequential=$sequential
        |        record="true"
        |    />
        |</Response>
@@ -74,8 +76,9 @@ object DialFormat extends App {
           downloadRecording(recordingUrl)
         }
 
+        val numsToCall = ""
         if (callIsActive(fields)) {
-          complete(sendDialResponse)
+          complete(sendDialResponse(false,numsToCall))
         }
         else{
           complete(endCall)

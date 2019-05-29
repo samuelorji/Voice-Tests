@@ -13,7 +13,7 @@ import akka.stream.ActorMaterializer
 
 import scala.util.{Failure, Success}
 
-object RecordFormat extends App {
+object RecordFormat  {
 
   //this uses the Record Action
 
@@ -33,7 +33,7 @@ object RecordFormat extends App {
   def sendPartialRecordResponse =
     s"""
        |<Response>
-       |    <Record finishOnKey="#" maxLength="10" trimSilence="true" playBeep="true" callbackUrl="https://orji.ngrok.io/record">
+       |    <Record finishOnKey="#" maxLength="10" trimSilence="true" playBeep="true" callbackUrl="https://fruor.serveo.net/record">
        |		  <Say>Please tell us your name after the beep.</Say>
        |	  </Record>
        |</Response>

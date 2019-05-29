@@ -1,3 +1,5 @@
+enablePlugins(JavaAppPackaging, AshScriptPlugin)
+
 name := "Voice-Tests"
 
 version := "0.1"
@@ -6,6 +8,9 @@ scalaVersion := "2.12.8"
 
 val akkaVersion      = "2.5.16"
 val akkaHttpVersion  = "10.1.5"
+
+dockerBaseImage := "openjdk:8-jre-alpine"
+packageName in Docker := "bantu"
 
 libraryDependencies ++= Seq(
   "com.typesafe.akka"      %% "akka-actor"           % akkaVersion,
